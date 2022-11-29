@@ -1,0 +1,134 @@
+/* Colors */
+:root {
+    --dark-1: #222;
+    --dark-2: #282743;
+    --light-1: #EEE;
+    --light-2: #CCC8C8;
+    --accent-1: rgb(121, 103, 235);
+    --accent-2: rgb(59, 49, 128);
+    --rounded: 4px;
+}
+
+/* General */
+input {
+  outline: none;
+  border: none;
+}
+
+h3 {
+    margin: 0;
+}
+
+/* Layout */
+body {
+    background: var(--dark-1);
+    color: var(--light-2);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+}
+
+header {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 0;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    max-width: 1000px;
+    margin: 4rem auto;
+}
+
+main label {
+    width: 100%;
+}
+
+/* INPUT */
+.input {
+    display: flex;
+    height: 3rem;
+}
+
+.input input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding-left: 0.5rem;
+    color: var(--light-1);
+    background-color: var(--dark-2);
+
+    border: 1px solid var(--light-2);
+    border-right: none;
+    border-top-left-radius: var(--rounded);
+    border-bottom-left-radius: var(--rounded);
+
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.input button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 100%;
+    border: none;
+    background-color: var(--accent-1);
+
+    border: 1px solid var(--light-2);
+    border-left: none;
+    border-top-right-radius: var(--rounded);
+    border-bottom-right-radius: var(--rounded);
+}
+
+.input button:hover {
+    cursor: pointer;
+}
+
+/* ACCENT COLORS */
+.bg-accent-1 {
+    background-color: var(--accent-1);
+}
+
+.bg-accent-2 {
+    background-color: var(--accent-2);
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.2rem;
+    margin: 0 3rem;
+}
+
+.status-card {
+    display: flex;
+    gap: 4rem;
+    width: 22rem;
+    height: 15rem;
+    padding: 1rem;
+    background: var(--dark-2);
+    border: 2px solid var(--light-1);
+    border-radius: 5px;
+    line-height: 2rem;
+}
+
+.data-names,
+.data-values {
+    width: 100%;
+}
+
+.card-item {
+    white-space: nowrap;
+}
