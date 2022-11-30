@@ -24,7 +24,6 @@ class StatusCard {
         row_value.classList.add("card-item");
         row_value.textContent = value;
         values.append(row_value);
-        console.log("Added", name, value)
     }
 
     get_card_element() {
@@ -40,15 +39,10 @@ class StatusCard {
         status_card.append(data_values);
 
         this.add_row_to_card(status_card, "Host", this.host.toString());
-        console.log(status_card);
         this.add_row_to_card(status_card, "Port", this.port.toString());
-        console.log(status_card);
         this.add_row_to_card(status_card, "Online", this.is_online.toString());
-        console.log(status_card);
         this.add_row_to_card(status_card, "Software", this.software.toString().slice(0, 15));
-        console.log(status_card);
         this.add_row_to_card(status_card, "Players", `${this.online_players} / ${this.max_players}`);
-        console.log(status_card);
         return status_card;
     }
 
@@ -82,7 +76,6 @@ let = current_data = {};
 submit_btn.addEventListener("click", e => {
     e.preventDefault();
     let host = host_input.value;
-    console.log(host);
     // fetch("https://api.mcsrvstat.us/2/69.153.0.41").then(res => res.json()).then(json => console.log(json))
     // let url = `https://api.mcsrvstat.us/2/${host}`
     let url = `http://localhost:8010/proxy/2/${host}`
@@ -93,7 +86,6 @@ submit_btn.addEventListener("click", e => {
     })
     .then(res => res.json())
     .then(json => {
-        console.log(json);
         current_data = json;
         let card = new StatusCard(
             json.ip,
@@ -106,7 +98,6 @@ submit_btn.addEventListener("click", e => {
         )
         let card_element = card.card;
         card.add_delete_button();
-        console.log(card);
         cards_element.append(card_element);
     })
     .catch(err => {
