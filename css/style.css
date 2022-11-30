@@ -1,4 +1,4 @@
-/* Colors */
+/* COLORS */
 :root {
     --dark-1: #222;
     --dark-2: #282743;
@@ -7,10 +7,11 @@
     --accent-1: rgb(121, 103, 235);
     --accent-2: rgb(59, 49, 128);
     --green: rgb(66, 177, 94);
+    --red: rgb(218, 99, 95);
     --rounded: 4px;
 }
 
-/* General */
+/* GENERAL */
 input {
   outline: none;
   border: none;
@@ -20,7 +21,7 @@ h3 {
     margin: 0;
 }
 
-/* Layout */
+/* LAYOUT */
 body {
     background: var(--dark-1);
     color: var(--light-2);
@@ -139,7 +140,8 @@ main label {
     white-space: nowrap;
 }
 
-.add-btn {
+.add-btn,
+.del-btn {
     position: absolute;
     width: 2rem;
     height: 2rem;
@@ -151,10 +153,31 @@ main label {
     text-align: center;
     border-radius: 4px;
 
-    background: var(--green);
-    color: var(--light-2);
-
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 3rem;
     font-weight: 600;
+}
+
+.add-btn:hover,
+.del-btn:hover {
+    cursor: pointer;
+}
+
+.add-btn {
+    background-image: url("../images/plus.svg");
+    background-color: var(--green);
+    background-repeat: no-repeat;
+    background-position: center;
+    fill: red;
+
+    color: var(--light-2);
+}
+
+.del-btn {
+    background-color: var(--red);
+    background-image: url("../images/minus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    color: var(--light-2);
 }

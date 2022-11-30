@@ -7,6 +7,7 @@ class StatusCard {
         this.online_players = online_players;
         this.max_players = max_players;
         this.software = software;
+        this.card = this.get_card_element();
     }
 
     add_row_to_card(card, name, value) {
@@ -50,6 +51,26 @@ class StatusCard {
         console.log(status_card);
         return status_card;
     }
+
+    add_plus_button() {
+        let btn = document.createElement("div");
+        btn.classList.add("add-btn")
+        btn.addEventListener(e => {
+
+        })
+        this.card.append(btn);
+    }
+
+    add_delete_button() {
+        let btn = document.createElement("div");
+        btn.classList.add("del-btn")
+        btn.addEventListener("click", e => {
+            // let card = e.parentNode;
+            // card.parentNode.removeChild(card);
+            this.card.parentNode.removeChild(this.card);
+        })
+        this.card.append(btn);
+    }
 }
 
 let host_input = document.querySelector("main .input input[name='ip']");
@@ -83,7 +104,8 @@ submit_btn.addEventListener("click", e => {
             json.players.max,
             json.software,
         )
-        let card_element = card.get_card_element();
+        let card_element = card.card;
+        card.add_delete_button();
         console.log(card);
         cards_element.append(card_element);
     })
