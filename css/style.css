@@ -6,6 +6,7 @@
     --light-2: #CCC8C8;
     --accent-1: rgb(121, 103, 235);
     --accent-2: rgb(59, 49, 128);
+    --green: rgb(66, 177, 94);
     --rounded: 4px;
 }
 
@@ -117,6 +118,7 @@ main label {
 }
 
 .status-card {
+    position: relative;
     display: flex;
     gap: 4rem;
     width: 20rem;
@@ -135,4 +137,24 @@ main label {
 
 .card-item {
     white-space: nowrap;
+}
+
+.add-btn {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    bottom: .75rem;
+    right: .75rem;
+
+    margin: auto;
+    padding: 4px;
+    text-align: center;
+    border-radius: 4px;
+
+    background: var(--green);
+    color: var(--light-2);
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
 }
