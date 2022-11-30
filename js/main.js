@@ -88,13 +88,13 @@ submit_btn.addEventListener("click", e => {
     .then(json => {
         current_data = json;
         let card = new StatusCard(
-            json.ip,
-            json.port,
-            json.online,
-            json.map,
-            json.players.online,
-            json.players.max,
-            json.software,
+            json?.ip,
+            json?.port,
+            json?.online,
+            json?.map,
+            json?.players?.online,
+            json?.players?.max,
+            json?.software,
         )
         let card_element = card.card;
         card.add_delete_button();
